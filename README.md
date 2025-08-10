@@ -237,7 +237,7 @@ new CSSTransformMatrixPlugin({
 
 ```bash
 # 克隆仓库
-git clone <repo-url>
+git clone https://github.com/RicardoPang/css-transform-matrix-plugin.git
 cd css-transform-matrix-plugin
 
 # 安装依赖
