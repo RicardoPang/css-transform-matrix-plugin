@@ -3,14 +3,16 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 
 export default [
-  // 主插件
+  // 主插件 - CommonJS 格式
   {
     input: 'src/plugin/index.ts',
     output: {
       file: 'dist/index.js',
       format: 'cjs',
-      exports: 'named',
+      exports: 'auto',
       sourcemap: true,
+      // 明确指定 CommonJS 导出
+      interop: 'auto',
     },
     plugins: [
       nodeResolve({
@@ -26,7 +28,7 @@ export default [
     ],
     external: ['postcss', 'postcss-value-parser'],
   },
-  // 运行时版本 (包含所有依赖)
+  // 运行时版本 - UMD 格式，包含所有依赖
   {
     input: 'src/runtime.ts',
     output: {
@@ -49,7 +51,7 @@ export default [
     ],
     external: [], // 运行时版本包含所有依赖
   },
-  // PostCSS 插件版本
+  // PostCSS 插件版本 - CommonJS 格式
   {
     input: 'src/postcss-plugin.ts',
     output: {

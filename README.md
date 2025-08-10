@@ -1,5 +1,9 @@
 # CSS Transform Matrix Plugin
 
+[![npm version](https://badge.fury.io/js/css-transform-matrix-plugin.svg)](https://badge.fury.io/js/css-transform-matrix-plugin)
+[![npm downloads](https://img.shields.io/npm/dm/css-transform-matrix-plugin.svg)](https://www.npmjs.com/package/css-transform-matrix-plugin)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 一个 Webpack 插件，自动将 CSS 中的 `transform` 属性转换为 `matrix3d` 形式，实现 GPU 加速优化。
 
 ## 🚀 功能特性

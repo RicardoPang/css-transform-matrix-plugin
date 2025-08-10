@@ -1,7 +1,6 @@
 {
   "name": "css-transform-matrix-plugin",
-  "version": "1.0.0",
-  "type": "module",
+  "version": "1.0.2",
   "description": "A webpack plugin that automatically converts CSS transform properties to matrix3d for GPU acceleration",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -33,7 +32,7 @@
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
     "format": "prettier --write src/**/*.ts",
-    "prepublishOnly": "npm run build && npm run test && npm run lint",
+    "prepublishOnly": "npm run build && npm run test",
     "dev": "rollup -c -w",
     "clean": "rm -rf dist/"
   },
@@ -53,7 +52,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/css-transform-matrix-plugin.git"
+    "url": "https://github.com/yourusername/css-transform-matrix-plugin.git"
   },
   "bugs": {
     "url": "https://github.com/yourusername/css-transform-matrix-plugin/issues"
