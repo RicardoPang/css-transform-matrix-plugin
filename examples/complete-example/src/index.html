@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Transform Matrix Plugin 示例</title>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        min-height: 100vh;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .demo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+      .demo-card {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        backdrop-filter: blur(10px);
+      }
+      .demo-title {
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #ffeb3b;
+      }
+      .demo-box {
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        margin: 20px auto;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+      .code-block {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 10px;
+        border-radius: 5px;
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        overflow-x: auto;
+        margin-top: 10px;
+      }
+      .stats {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>🎯 CSS Transform Matrix Plugin 演示</h1>
+        <p>自动将 CSS transform 属性转换为 matrix3d 以实现 GPU 加速</p>
+      </header>
+
+      <div class="demo-grid">
+        <div class="demo-card">
+          <h3 class="demo-title">🔄 平移变换</h3>
+          <div class="demo-box translate-demo">Translate</div>
+          <div class="code-block">
+            <div>原始: transform: translateX(50px) translateY(30px);</div>
+            <div id="translate-result">转换后: 正在处理...</div>
+          </div>
+        </div>
+
+        <div class="demo-card">
+          <h3 class="demo-title">🔄 旋转变换</h3>
+          <div class="demo-box rotate-demo">Rotate</div>
+          <div class="code-block">
+            <div>原始: transform: rotate(45deg);</div>
+            <div id="rotate-result">转换后: 正在处理...</div>
+          </div>
+        </div>
+
+        <div class="demo-card">
+          <h3 class="demo-title">📏 缩放变换</h3>
+          <div class="demo-box scale-demo">Scale</div>
+          <div class="code-block">
+            <div>原始: transform: scale(1.2, 0.8);</div>
+            <div id="scale-result">转换后: 正在处理...</div>
+          </div>
+        </div>
+
+        <div class="demo-card">
+          <h3 class="demo-title">🌀 倾斜变换</h3>
+          <div class="demo-box skew-demo">Skew</div>
+          <div class="code-block">
+            <div>原始: transform: skewX(15deg) skewY(5deg);</div>
+            <div id="skew-result">转换后: 正在处理...</div>
+          </div>
+        </div>
+
+        <div class="demo-card">
+          <h3 class="demo-title">🎭 组合变换</h3>
+          <div class="demo-box complex-demo">Complex</div>
+          <div class="code-block">
+            <div>
+              原始: transform: translateX(20px) rotate(30deg) scale(1.1);
+            </div>
+            <div id="complex-result">转换后: 正在处理...</div>
+          </div>
+        </div>
+
+        <div class="demo-card">
+          <h3 class="demo-title">🎪 3D 变换</h3>
+          <div class="demo-box transform3d-demo">3D</div>
+          <div class="code-block">
+            <div>
+              原始: transform: rotateX(20deg) rotateY(30deg) translateZ(50px);
+            </div>
+            <div id="transform3d-result">转换后: 正在处理...</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <h3>📊 转换统计</h3>
+        <p>演示了 <span id="demo-count">6</span> 种不同的 transform 转换</p>
+        <p>所有变换都已自动转换为 matrix3d 格式以实现 GPU 加速</p>
+        <p>💡 打开开发者工具查看实际的 CSS 输出</p>
+      </div>
+    </div>
+  </body>
+</html>

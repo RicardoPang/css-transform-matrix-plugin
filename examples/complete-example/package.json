@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "build": "webpack --mode=production",
-    "dev": "webpack serve --mode=development"
+    "dev": "webpack serve --mode=development",
+    "install-plugin": "npm install css-transform-matrix-plugin@latest"
   },
   "devDependencies": {
     "css-loader": "^6.8.1",
-    "css-transform-matrix-plugin": "file:../../",
+    "css-transform-matrix-plugin": "^1.0.2",
     "html-webpack-plugin": "^5.5.3",
     "mini-css-extract-plugin": "^2.7.6",
     "style-loader": "^3.3.3",

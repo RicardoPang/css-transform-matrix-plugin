@@ -1,0 +1,135 @@
+/* ===== CSS Transform Matrix Plugin 测试样式 ===== */
+
+/* 1. 简单平移 */
+.translate-demo {
+  transform: translateX(50px) translateY(30px);
+}
+
+.translate-demo:hover {
+  transform: translateX(80px) translateY(50px);
+}
+
+/* 2. 旋转变换 */
+.rotate-demo {
+  transform: rotate(45deg);
+}
+
+.rotate-demo:hover {
+  transform: rotate(90deg);
+}
+
+/* 3. 缩放变换 */
+.scale-demo {
+  transform: scale(1.2, 0.8);
+}
+
+.scale-demo:hover {
+  transform: scale(1.5, 1.1);
+}
+
+/* 4. 倾斜变换 */
+.skew-demo {
+  transform: skewX(15deg) skewY(5deg);
+}
+
+.skew-demo:hover {
+  transform: skewX(25deg) skewY(10deg);
+}
+
+/* 5. 复杂组合变换 */
+.complex-demo {
+  transform: translateX(20px) rotate(30deg) scale(1.1);
+}
+
+.complex-demo:hover {
+  transform: translateX(40px) rotate(60deg) scale(1.3);
+}
+
+/* 6. 3D 变换 */
+.transform3d-demo {
+  transform: rotateX(20deg) rotateY(30deg) translateZ(50px);
+}
+
+.transform3d-demo:hover {
+  transform: rotateX(40deg) rotateY(60deg) translateZ(80px);
+}
+
+/* 动画效果 */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+.demo-box {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* 性能测试 - 大量元素 */
+.performance-test {
+  display: none; /* 默认隐藏 */
+}
+
+.performance-item {
+  width: 20px;
+  height: 20px;
+  background: #ff4757;
+  position: absolute;
+  transform: translateX(10px) rotate(45deg) scale(0.8);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .demo-box {
+    transform: scale(0.8);
+  }
+
+  .demo-box:hover {
+    transform: scale(1) rotate(10deg);
+  }
+}
+
+/* 复杂的嵌套变换 */
+.nested-transform .child {
+  transform: translateX(30px) rotate(15deg);
+}
+
+.nested-transform .child .grandchild {
+  transform: scale(1.2) skewX(10deg);
+}
+
+/* 矩阵变换测试 */
+.matrix-test {
+  transform: matrix(1, 0.5, -0.5, 1, 50, 100);
+}
+
+.matrix3d-test {
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 50, 100, 0, 1);
+}
+
+/* 关键帧动画中的变换 */
+@keyframes complex-animation {
+  0% {
+    transform: translateX(0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateX(100px) rotate(90deg) scale(1.2);
+  }
+  50% {
+    transform: translateX(200px) rotate(180deg) scale(0.8);
+  }
+  75% {
+    transform: translateX(100px) rotate(270deg) scale(1.1);
+  }
+  100% {
+    transform: translateX(0) rotate(360deg) scale(1);
+  }
+}
+
+.animated-demo {
+  animation: complex-animation 4s linear infinite;
+}
