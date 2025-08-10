@@ -1,0 +1,18 @@
+.box {
+  transform: translateX(10px) rotate(45deg) scale(1.5);
+  background: red;
+  width: 100px;
+  height: 100px;
+}
+
+.simple-translate {
+  transform: translateX(20px);
+}
+
+.complex-transform {
+  transform: translate3d(10px, 20px, 30px) rotateX(30deg) scale(2, 1.5);
+}
+
+.no-transform {
+  background: blue;
+}

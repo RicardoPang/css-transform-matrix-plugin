@@ -1,0 +1,92 @@
+{
+  "name": "css-transform-matrix-plugin",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A webpack plugin that automatically converts CSS transform properties to matrix3d for GPU acceleration",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./runtime": {
+      "require": "./dist/runtime.js",
+      "import": "./dist/runtime.js"
+    },
+    "./postcss": {
+      "require": "./dist/postcss.js",
+      "import": "./dist/postcss.js"
+    }
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "format": "prettier --write src/**/*.ts",
+    "prepublishOnly": "npm run build && npm run test && npm run lint",
+    "dev": "rollup -c -w",
+    "clean": "rm -rf dist/"
+  },
+  "keywords": [
+    "webpack",
+    "plugin",
+    "css",
+    "transform",
+    "matrix3d",
+    "gpu",
+    "acceleration",
+    "postcss",
+    "performance",
+    "css-in-js"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/css-transform-matrix-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/css-transform-matrix-plugin/issues"
+  },
+  "homepage": "https://github.com/yourusername/css-transform-matrix-plugin#readme",
+  "peerDependencies": {
+    "postcss": "^8.0.0",
+    "webpack": "^5.0.0"
+  },
+  "dependencies": {
+    "postcss-value-parser": "^4.2.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-typescript": "^12.1.1",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.6",
+    "@types/webpack": "^5.28.5",
+    "@typescript-eslint/eslint-plugin": "^8.18.3",
+    "@typescript-eslint/parser": "^8.18.3",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "jest": "^29.7.0",
+    "postcss": "^8.5.1",
+    "prettier": "^3.4.2",
+    "rollup": "^4.28.1",
+    "ts-jest": "^29.2.5",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
